@@ -1,2 +1,2 @@
-# SS1-my-camera
+# SS1 tasks
  
