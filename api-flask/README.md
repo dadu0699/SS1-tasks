@@ -1,4 +1,12 @@
 # API
+
+## .env File
+```env
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+REGION_NAME=
+```
+
 ## Start
 Existen dos maneras de poner en marcha nuestra api con flask siendo por medio de variables de entrono o por código.
 

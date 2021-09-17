@@ -1,4 +1,6 @@
 from flask import Flask, jsonify, request
+from rekognition import labels
+
 app = Flask(__name__)
 
 
@@ -9,7 +11,7 @@ def health_check():
 
 @app.route('/tarea3-201801266', methods=['POST'])
 def tarea3():
-    return jsonify({"you_say": request.json})
+    return jsonify(labels(request.json['image']))
 
 
 if __name__ == '__main__':
