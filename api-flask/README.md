@@ -1,4 +1,10 @@
 # API
+La funcionalidad principal del API es permitir reconocer las etiquetas de una imagen enviada en base64 al servicio `rekognition` de AWS. Esto por medio del método POST en el puerto `5000` y una entrada JSON con la siguiente estructura.
+```json
+{
+  "image": "<imagen_en_base64>"
+}
+```
 
 ## .env File
 ```env
