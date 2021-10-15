@@ -46,3 +46,7 @@ REGION_NAME=
 
 
 ## Start
+La ejecución se puede realizar mediante el comando:
+```bash
+go run .\cmd\server\main.go
+```
