@@ -46,7 +46,8 @@ REGION_NAME=
 
 
 ## Start
-La ejecución se puede realizar mediante el comando:
+Primero es necesario instalar los paquetes necesarios y luego se puede realizar la ejecución del API.
 ```bash
+go mod tidy
 go run .\cmd\server\main.go
 ```
