@@ -24,7 +24,7 @@ func (a *App) DetectLabelsHandler() http.HandlerFunc {
 			return
 		}
 
-		result,err := api.DetectLabels(req)
+		result, err := api.DetectLabels(req)
 		if err != nil {
 			log.Printf("%v \n", err)
 			sendResponse(w, r, err.Error(), http.StatusBadRequest)
@@ -46,7 +46,7 @@ func (a *App) CompareFacesHandler() http.HandlerFunc {
 			return
 		}
 
-		result,err := api.CompareFaces(req)
+		result, err := api.CompareFaces(req)
 		if err != nil {
 			log.Printf("%v \n", err)
 			sendResponse(w, r, err.Error(), http.StatusBadRequest)

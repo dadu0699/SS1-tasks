@@ -19,7 +19,7 @@ func New() *App {
 
 func (a *App) initRoutes() {
 	a.Router.HandleFunc("/", a.IndexHandler()).Methods("GET")
-	
+
 	a.Router.HandleFunc("/detect-labels", a.DetectLabelsHandler()).Methods("POST")
 	a.Router.HandleFunc("/compare-faces", a.CompareFacesHandler()).Methods("POST")
 }

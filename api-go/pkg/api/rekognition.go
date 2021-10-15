@@ -39,7 +39,7 @@ func DetectLabels(body DetectLabelsStruct) (*rekognition.DetectLabelsOutput, err
 		Image: &rekognition.Image{Bytes: decodedImage},
 	}
 
-	svc, err :=createSession()
+	svc, err := createSession()
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func DetectLabels(body DetectLabelsStruct) (*rekognition.DetectLabelsOutput, err
 }
 
 // CompareFaces is a function that allows comparison of faces through the rekognition service.
-func CompareFaces(body CompareFacesStruct)  (*rekognition.CompareFacesOutput, error) {
+func CompareFaces(body CompareFacesStruct) (*rekognition.CompareFacesOutput, error) {
 	decodedFirstImage, err := base64.StdEncoding.DecodeString(body.FirstImage)
 	if err != nil {
 		return nil, err
@@ -66,11 +66,11 @@ func CompareFaces(body CompareFacesStruct)  (*rekognition.CompareFacesOutput, er
 
 	input := &rekognition.CompareFacesInput{
 		SimilarityThreshold: aws.Float64(body.Similarity),
-		SourceImage: &rekognition.Image{Bytes: decodedFirstImage},
-		TargetImage: &rekognition.Image{Bytes: decodedSecondImage},
+		SourceImage:         &rekognition.Image{Bytes: decodedFirstImage},
+		TargetImage:         &rekognition.Image{Bytes: decodedSecondImage},
 	}
 
-	svc, err :=createSession()
+	svc, err := createSession()
 	if err != nil {
 		return nil, err
 	}

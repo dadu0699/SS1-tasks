@@ -8,12 +8,12 @@ type Response struct {
 
 // DetectLabelsStruct is the structure of the body sent to the request.
 type DetectLabelsStruct struct {
-	Image string         `json:"image"`
+	Image string `json:"image"`
 }
 
 // CompareFacesStruct is the structure of the body sent to the request.
 type CompareFacesStruct struct {
-	FirstImage string         `json:"imagen1"`
-	SecondImage string         `json:"imagen2"`
-	Similarity float64         `json:"similitud"`
+	FirstImage  string  `json:"imagen1"`
+	SecondImage string  `json:"imagen2"`
+	Similarity  float64 `json:"similitud"`
 }
