@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/rs/cors"
 )
 
@@ -22,6 +23,10 @@ func run() (err error) {
 }
 
 func main() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatalf("%s: %s", "Error loading .env file", err)
+	}
+
 	if err := run(); err != nil {
 		log.Fatalf("This is the startup error: %s", err)
 		os.Exit(1)
