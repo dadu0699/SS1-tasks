@@ -50,8 +50,12 @@ flask run --port 6000
 
 ### By code
 La opción mediante código se realiza creando el main en Python en el cual se llama al servidor mediante su método run, también se le pueden pasar parámetros para su ejecución.
-
 ```py
 if __name__ == '__main__':
     app.run(debug=True)
+```
+
+Luego se puede realizar la ejecución normal mediante el comando:
+```bash
+python app.py
 ```
