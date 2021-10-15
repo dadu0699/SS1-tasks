@@ -21,18 +21,18 @@ func createSession() (*rekognition.Rekognition, error) {
 		},
 	)
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	svc := rekognition.New(sess)
-	return svc,nil
+	return svc, nil
 }
 
 // DetectLabels is a function that allows the detection of image labels through the rekognition service.
 func DetectLabels(body DetectLabelsStruct) (*rekognition.DetectLabelsOutput, error) {
 	decodedImage, err := base64.StdEncoding.DecodeString(body.Image)
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	input := &rekognition.DetectLabelsInput{
@@ -41,12 +41,12 @@ func DetectLabels(body DetectLabelsStruct) (*rekognition.DetectLabelsOutput, err
 
 	svc, err :=createSession()
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	result, err := svc.DetectLabels(input)
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	return result, nil
@@ -56,12 +56,12 @@ func DetectLabels(body DetectLabelsStruct) (*rekognition.DetectLabelsOutput, err
 func CompareFaces(body CompareFacesStruct)  (*rekognition.CompareFacesOutput, error) {
 	decodedFirstImage, err := base64.StdEncoding.DecodeString(body.FirstImage)
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	decodedSecondImage, err := base64.StdEncoding.DecodeString(body.SecondImage)
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	input := &rekognition.CompareFacesInput{
@@ -72,12 +72,12 @@ func CompareFaces(body CompareFacesStruct)  (*rekognition.CompareFacesOutput, er
 
 	svc, err :=createSession()
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	result, err := svc.CompareFaces(input)
 	if err != nil {
-		return nil ,err
+		return nil, err
 	}
 
 	return result, nil
