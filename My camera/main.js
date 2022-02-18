@@ -1,19 +1,20 @@
-import './style.css'
+import './style.css';
 
-function startup() {
-  const video = document.querySelector("#videoElement");
+const startup = () => {
+  const video = document.querySelector('#videoElement');
 
   if (navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({
-        video: true
+    navigator.mediaDevices
+      .getUserMedia({
+        video: true,
       })
-      .then(function (stream) {
+      .then((stream) => {
         video.srcObject = stream;
       })
-      .catch(function (err0r) {
-        console.log("Something went wrong!");
+      .catch((err) => {
+        console.error(err);
       });
   }
-}
+};
 
 startup();
