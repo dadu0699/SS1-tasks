@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def health_check():
-    return jsonify({"status": "ok"})
+    return jsonify({'status': 'ok'})
 
 
 @app.route('/detect-labels', methods=['POST'])
